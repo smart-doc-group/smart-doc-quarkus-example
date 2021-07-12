@@ -1,1 +1,1 @@
-# smart-doc-quarkus-example
+# Smart-doc Quarkus
