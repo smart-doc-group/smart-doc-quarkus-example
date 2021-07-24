@@ -1,6 +1,6 @@
 # Smart-doc Quarkus
 
-# 环境要求
+# Prerequisites
 - JDK 11
 - Maven 3.6.3 +
 # Run locally
@@ -12,7 +12,27 @@ mvn compile quarkus:dev
 ```
 curl -w "\n" http://localhost:8080/hello
 ```
-# 添加容器化支持
+# Packaging and Running
+
+## JVM Mode
+```
+mvn clean package
+```
+## Native Mode
+```
+mvn clean package -Pnative
+```
+跳过测试
+```
+mvn clean package -Pnative -Dmaven.test.skip=true
+```
+## Creating Docker Image
+JVM和Native两种模式的Dockerfile模板在`src/main/docker`, 对于native模式使用下面命令来构建。
+```
+mvn clean package -Pnative
+docker build -f src/main/docker/Dockerfile.native -t crud-catalog-quarkus .
+```
+# Deploying Quarkus Application to Kubernetes
 添加Kubernetes和Docker镜像扩展:
 ```
 mvn quarkus:add-extension -Dextensions="kubernetes, container-image-docker"
@@ -40,6 +60,7 @@ mvn clean package
 ```
 mvn clean package -Dquarkus.kubernetes.deploy=true
 ```
+
 
 # Reference
 https://haralduebele.github.io/2020/04/03/deploy-your-quarkus-applications-on-kubernetes-almost-automatically/
