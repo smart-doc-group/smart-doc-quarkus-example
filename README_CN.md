@@ -31,7 +31,11 @@ mvn clean package -Pnative -Dmaven.test.skip=true
 JVM和Native两种模式的Dockerfile模板在`src/main/docker`, 对于native模式使用下面命令来构建。
 ```
 mvn clean package -Pnative
-docker build -f src/main/docker/Dockerfile.native -t crud-catalog-quarkus .
+docker build -f src/main/docker/Dockerfile.native -t smart-doc-quarkus-example .
+```
+如果想直接docker运行，则使用下面的命令启动
+```
+docker run -i --rm -p 8080:8080 smart-doc-quarkus-example
 ```
 # Deploying Quarkus Application to Kubernetes
 添加Kubernetes和Docker镜像扩展:
@@ -64,5 +68,6 @@ mvn clean package -Dquarkus.kubernetes.deploy=true
 
 
 # Reference
-https://haralduebele.github.io/2020/04/03/deploy-your-quarkus-applications-on-kubernetes-almost-automatically/
-https://quarkus.io/guides/deploying-to-kubernetes
+- https://haralduebele.github.io/2020/04/03/deploy-your-quarkus-applications-on-kubernetes-almost-automatically/
+- https://quarkus.io/guides/deploying-to-kubernetes
+- https://2much2learn.com/restful-event-driven-microservice-using-quarkus-jpa-kafka/
