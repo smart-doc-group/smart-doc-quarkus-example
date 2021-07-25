@@ -3,6 +3,7 @@
 # Prerequisites
 - JDK 11
 - Maven 3.6.3 +
+- Visual Studio 2019(Using Native Image on Windows)
 # Run locally
 可以本地化运行应用，命令如下：
 ```
