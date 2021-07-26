@@ -1,6 +1,7 @@
 package com.power.doc.kubernetes.quarkus.rest;
 
 import com.power.doc.kubernetes.quarkus.service.GreetingService;
+import org.jboss.logging.Logger;
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
 import javax.inject.Inject;
@@ -12,8 +13,11 @@ import javax.ws.rs.core.MediaType;
 @Path("/hello")
 public class GreetingResource {
 
+    private static final Logger LOG = Logger.getLogger(GreetingResource.class);
     @Inject
     GreetingService service;
+
+
 
     /**
      * Test inject
@@ -31,6 +35,7 @@ public class GreetingResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
+        LOG.info("Hello RESTEasy");
         return "Hello RESTEasy";
     }
 }
