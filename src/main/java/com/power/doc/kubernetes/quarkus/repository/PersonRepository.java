@@ -14,10 +14,9 @@ import java.util.stream.Collectors;
 @ApplicationScoped
 public class PersonRepository {
 
-    private Map<Long, Person> persons = new ConcurrentHashMap<>();
+    private static Map<Long, Person> persons = new ConcurrentHashMap<>();
 
-
-    public PersonRepository() {
+    static {
         Person person = new Person();
         person.setEmail("xx@gmail.com");
         person.setFirstName("Carrot");
@@ -25,6 +24,7 @@ public class PersonRepository {
         person.setId(1);
         persons.put(person.getId(), person);
     }
+
 
     public Optional<Person> findById(long id) {
         return Optional.ofNullable(persons.get(id));
