@@ -5,9 +5,19 @@ package com.power.doc.kubernetes.quarkus.model;
  */
 public class MyResponse<T> {
 
+    /**
+     * Business status code,the code is 0 when successful
+     */
     private int code;
+
+    /**
+     * Error message or response message, when successful, message is success
+     */
     private String message;
 
+    /**
+     * Business data
+     */
     private T data;
 
     public static <T> MyResponse<T> ok() {
@@ -45,7 +55,8 @@ public class MyResponse<T> {
         return data;
     }
 
-    public void setData(T data) {
+    public MyResponse setData(T data) {
         this.data = data;
+        return this;
     }
 }

@@ -22,4 +22,17 @@ public class HeaderParamTestResource {
                 .entity("userAgent : " + userAgent)
                 .build();
     }
+
+    /**
+     * Custom header2
+     * @param apiKey App Identifier
+     * @return
+     */
+    @GET
+    @Path("testHeader2")
+    public Response testHeader2(@HeaderParam("authorization") String authHeader,@HeaderParam("apiKey") String apiKey){
+        return Response.status(200)
+                .entity("apiKey : " + apiKey)
+                .build();
+    }
 }

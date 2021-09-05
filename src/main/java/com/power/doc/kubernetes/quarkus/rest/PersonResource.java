@@ -4,7 +4,7 @@ import com.power.doc.kubernetes.quarkus.exception.PersonNotFoundException;
 import com.power.doc.kubernetes.quarkus.model.MyResponse;
 import com.power.doc.kubernetes.quarkus.model.Person;
 import com.power.doc.kubernetes.quarkus.repository.PersonRepository;
-import org.jboss.resteasy.annotations.jaxrs.PathParam;
+
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -57,6 +57,7 @@ public class PersonResource {
      */
     @POST
     @Produces(MediaType.APPLICATION_JSON)
+    @Path("save")
     public Person post(Person person) {
         personRepository.add(person);
         return person;
@@ -71,7 +72,7 @@ public class PersonResource {
      */
     @PUT
     @Path("/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
+//    @Produces(MediaType.APPLICATION_JSON)
     public MyResponse<Person> put(@PathParam("id") long id, Person personDetails) {
         Person person = personRepository.findById(id).
                 orElseThrow(() -> new PersonNotFoundException(id));

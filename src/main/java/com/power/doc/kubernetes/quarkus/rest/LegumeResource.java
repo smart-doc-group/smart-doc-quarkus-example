@@ -13,6 +13,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
+ * LegumeResource
  * @author yu 2021/7/13.
  */
 @Path("/legumes")

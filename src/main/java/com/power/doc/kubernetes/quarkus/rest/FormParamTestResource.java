@@ -7,7 +7,7 @@ import javax.ws.rs.core.Response;
 import java.util.concurrent.CompletionStage;
 
 /**
- * JAX-RS form param example
+ * JAX-RS Form param example
  * @author yu 2021/7/14.
  */
 @Path("/formParam")
