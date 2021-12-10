@@ -28,6 +28,10 @@ public class LegumeResource {
         legumes.add(new Legume("Zucchini", "Summer squash"));
     }
 
+    /**
+     * List of LegumeResource
+     * @return
+     */
     @GET
     public MyResponse<Set<Legume>> list() {
         return MyResponse.ok(legumes);

@@ -85,7 +85,7 @@
             <plugin>
                 <groupId>com.github.shalousun</groupId>
                 <artifactId>smart-doc-maven-plugin</artifactId>
-                <version>2.2.6</version>
+                <version>2.3.4</version>
                 <configuration>
                     <!--Specify the configuration file used to generate the document-->
                     <configFile>./src/main/resources/smart-doc.json</configFile>
