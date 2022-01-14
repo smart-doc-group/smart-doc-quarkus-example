@@ -5,7 +5,6 @@ import com.power.doc.kubernetes.quarkus.model.MyResponse;
 import com.power.doc.kubernetes.quarkus.model.Person;
 import com.power.doc.kubernetes.quarkus.repository.PersonRepository;
 
-
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -17,6 +16,7 @@ import java.util.List;
  * @author yu 2021/7/13.
  */
 @Path("/people")
+@Produces(MediaType.APPLICATION_JSON)
 public class PersonResource {
 
     @Inject
@@ -29,7 +29,6 @@ public class PersonResource {
      * @return the list
      */
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
     public List<Person> all() {
         return personRepository.findAll();
     }
@@ -42,7 +41,6 @@ public class PersonResource {
      */
     @GET
     @Path("/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
     public Person get(@PathParam("id") Long id) {
         Person person = personRepository.findById(id).
                 orElseThrow(() -> new PersonNotFoundException(id));
@@ -56,7 +54,6 @@ public class PersonResource {
      * @return the person
      */
     @POST
-    @Produces(MediaType.APPLICATION_JSON)
     @Path("save")
     public Person post(Person person) {
         personRepository.add(person);
@@ -72,10 +69,9 @@ public class PersonResource {
      */
     @PUT
     @Path("/{id}")
-//    @Produces(MediaType.APPLICATION_JSON)
-    public MyResponse<Person> put(@PathParam("id") long id, Person personDetails) {
-        Person person = personRepository.findById(id).
-                orElseThrow(() -> new PersonNotFoundException(id));
+    public MyResponse<Person> put(Person personDetails) {
+        Person person = personRepository.findById(personDetails.getId()).
+                orElseThrow(() -> new PersonNotFoundException(personDetails.getId()));
         person.setEmail(personDetails.getEmail());
         person.setLastName(personDetails.getLastName());
         person.setFirstName(personDetails.getFirstName());
@@ -91,7 +87,6 @@ public class PersonResource {
      */
     @DELETE
     @Path("/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
     public MyResponse delete(@PathParam("id") Long id) {
         Person person = personRepository.findById(id).
                 orElseThrow(() -> new PersonNotFoundException(id));
