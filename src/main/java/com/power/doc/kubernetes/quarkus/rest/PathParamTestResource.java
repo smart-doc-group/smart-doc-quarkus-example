@@ -2,9 +2,11 @@ package com.power.doc.kubernetes.quarkus.rest;
 
 import com.power.doc.kubernetes.quarkus.model.MyResponse;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.core.MediaType;
 
 /**
  * JAX-RS path param example
@@ -22,6 +24,7 @@ public class PathParamTestResource {
      */
     @GET
     @Path("{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
     public MyResponse<String> SinglePathParameter(@PathParam("id") String id) {
         String msg = "id=" + id;
         return MyResponse.ok().setData(msg);
