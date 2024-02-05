@@ -4,10 +4,11 @@ import com.power.doc.kubernetes.quarkus.exception.PersonNotFoundException;
 import com.power.doc.kubernetes.quarkus.model.MyResponse;
 import com.power.doc.kubernetes.quarkus.model.Person;
 import com.power.doc.kubernetes.quarkus.repository.PersonRepository;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
 
-import javax.inject.Inject;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
+
 import java.util.List;
 
 /**

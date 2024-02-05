@@ -3,12 +3,12 @@ package com.power.doc.kubernetes.quarkus.rest;
 import com.power.doc.kubernetes.quarkus.model.CreateUserRequest;
 import com.power.doc.kubernetes.quarkus.model.Person;
 
-import javax.validation.Valid;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Pattern;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Digits;
+import jakarta.validation.constraints.Pattern;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 
 /**
  * Valid Parameters

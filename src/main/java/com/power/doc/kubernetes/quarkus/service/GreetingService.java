@@ -1,6 +1,7 @@
 package com.power.doc.kubernetes.quarkus.service;
 
-import javax.enterprise.context.ApplicationScoped;
+
+import jakarta.enterprise.context.ApplicationScoped;
 
 /**
  * @author yu 2021/7/12.

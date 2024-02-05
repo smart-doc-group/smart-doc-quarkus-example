@@ -2,8 +2,8 @@ package com.power.doc.kubernetes.quarkus.repository;
 
 import com.power.doc.kubernetes.quarkus.model.Legume;
 import com.power.doc.kubernetes.quarkus.model.Person;
+import jakarta.enterprise.context.ApplicationScoped;
 
-import javax.enterprise.context.ApplicationScoped;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
