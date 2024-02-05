@@ -7,7 +7,6 @@
   "createDebugPage": true,
   "style":"xt256",
   "packageFilters": "",
-  "packageFilter": "",
   "md5EncryptedHtmlName": true,
   "projectName": "smart-doc-quarkus-example",
   "inlineEnum": true,
