@@ -17,7 +17,7 @@
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
         <quarkus.platform.version>3.7.1</quarkus.platform.version>
         <surefire-plugin.version>3.2.5</surefire-plugin.version>
-        <smart-doc-version>3.0.1</smart-doc-version>
+        <smart-doc-version>3.0.2</smart-doc-version>
     </properties>
     <dependencyManagement>
         <dependencies>
