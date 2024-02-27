@@ -49,11 +49,11 @@ Kubernetes extension将为我们创建三个资源对象
 
 还会自动在application.properties中添加容器的配置项：
 
-Property|Description
----|----
-quarkus.kubernetes.part-of=todo-app	|One of the Kubernetes “recommended” labels (recommended, not required)
-quarkus.container-image.registry=  quarkus.container-image.group= quarkus.container-image.name=getting-started  quarkus.container-image.tag=1.0	|Specifies the container image in the K8s deployment. Result is image: getting-started:1.0. Make sure there are no excess or trailing spaces! I specify empty registry and group parameters to obtain predictable results.
-quarkus.kubernetes.service-type=NodePort	|Creates a service of type NodePort, default would be ClusterIP (doesn’t really
+| Property                                                                                                                                         | Description                                                                                                                                                                                                               |
+|--------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| quarkus.kubernetes.part-of=todo-app	                                                                                                             | One of the Kubernetes “recommended” labels (recommended, not required)                                                                                                                                                    |
+| quarkus.container-image.registry=  quarkus.container-image.group= quarkus.container-image.name=getting-started  quarkus.container-image.tag=1.0	 | Specifies the container image in the K8s deployment. Result is image: getting-started:1.0. Make sure there are no excess or trailing spaces! I specify empty registry and group parameters to obtain predictable results. |
+| quarkus.kubernetes.service-type=NodePort	                                                                                                        | Creates a service of type NodePort, default would be ClusterIP (doesn’t really                                                                                                                                            |
 
 运行打包命令
 ```
